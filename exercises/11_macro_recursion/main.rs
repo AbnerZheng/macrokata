@@ -1,4 +1,14 @@
-// TODO: Create the `curry!()` macro.
+macro_rules! curry {
+    ( _, $block: block) => {
+        $block
+    };
+    ( ($v:ident : $t:ty) $(=> ($vv:ident : $tt: ty))* => _, $block: block ) => {
+        move |$v: $t| {
+            print_curried_argument($v);
+            curry!($(($vv:$tt) =>)* _, $block)
+        }
+    };
+}
 
 ////////// DO NOT CHANGE BELOW HERE /////////
 
