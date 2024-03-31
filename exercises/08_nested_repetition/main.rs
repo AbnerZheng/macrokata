@@ -11,7 +11,7 @@ macro_rules! graph {
     ($($s: literal -> ($($t: literal),*);)+) => {
         {
             let mut vec = Vec::new();
-            $($(vec.push(($s, $t));)*)*
+            $( $(vec.push(($s, $t));)* )*
             vec
         }
     };
