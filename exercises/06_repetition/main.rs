@@ -5,9 +5,12 @@ fn print_success() {
 ////////// DO NOT CHANGE ABOVE HERE /////////
 
 macro_rules! if_any {
-    ($a: expr $(, $e: expr)+ ; $b: block) => {
-        if $a $(|| $e)+ $b
-    };
+    // ($a: expr $(, $e: expr)+ ; $b: block) => {
+    //     if $a $(|| $e)+ $b
+    // };
+    ($($e:expr),+; $block:block) => {
+        if $($e)||+ $block
+    }
 }
 
 ////////// DO NOT CHANGE BELOW HERE /////////
