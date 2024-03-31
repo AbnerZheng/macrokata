@@ -12,6 +12,6 @@ macro_rules! math {
 ////////// DO NOT CHANGE BELOW HERE /////////
 
 fn main() {
-    print_result(math!(3 plus 5));
+    print_result(2 * math!(3 plus 5));
     print_result(math!(square 2));
 }
